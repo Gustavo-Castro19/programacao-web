@@ -5,16 +5,18 @@ let min=1;
 const randInt=Math.floor(Math.random()*(max-min)+min);
 
 let guess=-1;
-
+const body=document.getElementsByTagName('body');
+const item=document.createElement('p');
 console.log(`o numero que voce quer chutar é ${randInt}`); //informacao para debug
 
 while(guess != randInt){
 guess = parseInt(window.prompt("qual valor do numero?"));
 if(guess<randInt){
-document.writeln("voce errou para baixo" );
+  item.innerText="voce errou para baixo<br>";
 }else if(guess>randInt){
-  document.writeln("voce errou para cima");
+  item.innerText="voce errou para cima<br>";
 }else{
-  document.writeln("voce acertou parabens!!!!");
+  item.innerText="voce acertou parabens!!!!<br>";
 }
+body.append(item);
 }
